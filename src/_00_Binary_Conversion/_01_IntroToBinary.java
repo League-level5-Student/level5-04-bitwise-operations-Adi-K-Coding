@@ -1,5 +1,12 @@
 package _00_Binary_Conversion;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /*
  * Goal: Understand binary numbers
  * 
@@ -34,8 +41,14 @@ package _00_Binary_Conversion;
  * 
  * Below are examples of how to use binary numbers.
  */
-public class _01_IntroToBinary {
+public class _01_IntroToBinary implements ActionListener {
+	JButton button = new JButton();
+	JButton button1 = new JButton();
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
     public static void main(String[] args) {
+    	_01_IntroToBinary x = new _01_IntroToBinary();
+    	x.run();
         /*
          * The '0b' prefix before a binary number tells Java the following
          * digits are in binary. By default the digits are decimal.
@@ -44,5 +57,20 @@ public class _01_IntroToBinary {
         int decimalNum = 1001;
         System.out.println("Binary num ....: " + binaryNum);
         System.out.println("Decimal num ...: " + decimalNum);
+        
     }
+    void run() {
+    	frame.add(panel);
+    	panel.add(button);
+    	button.addActionListener(this);
+    	button1.addActionListener(this);
+    }
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		JButton e = new JButton();
+		if(e.equals(button)) {
+			
+		}
+		
+	}
 }
