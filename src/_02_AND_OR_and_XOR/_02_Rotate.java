@@ -41,19 +41,7 @@ public class _02_Rotate {
 	}
 
 	int rotateRight(int value, int rotateAmount) {
-		System.out.println(Integer.toBinaryString(value));
-		for (int i = 0; i < rotateAmount; i++) {
-			int bitValue = value << 31;
-			System.out.println(Integer.toBinaryString(bitValue));
-			System.out.print("bv"+bitValue);
-			int shiftedValue = value >>> 1;
-			System.out.println(Integer.toBinaryString(shiftedValue));
-			if (bitValue == (int)Math.pow(2,31)) {
-				shiftedValue += (int)Math.pow(2,31);
-			}
-			value = shiftedValue;
-		}
-		return value;
+		return (value>>>rotateAmount)| (value<<(32-rotateAmount));
 	}
 
 	@Test
